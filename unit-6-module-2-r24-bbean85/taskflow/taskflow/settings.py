@@ -126,8 +126,9 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_URL = '/login/'  
+LOGIN_URL = '/auth/login/'  
 LOGIN_REDIRECT_URL = '/projects/'  
 LOGOUT_REDIRECT_URL = '/'  
 
-AUTH_USER_MODEL = 'tasks.CustomUser'  
+AUTH_USER_MODEL = "tasks.CustomUser"
+ 

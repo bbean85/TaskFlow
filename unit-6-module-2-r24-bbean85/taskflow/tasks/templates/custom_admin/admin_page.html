@@ -8,15 +8,23 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <header>
-        <h1>Custom Admin Panel</h1>
-        <nav>
-            <a href="/custom-admin/">Dashboard</a> |
-            <a href="/custom-admin/manage-users/">Users</a> |
-            <a href="/logout/">Logout</a>
+    <header class="admin-header">
+        <h1 class="admin-title">Custom Admin Panel</h1>
+        <nav class="admin-nav">
+            <a href="{% url 'custom_admin' %}">Dashboard</a> |
+            <a href="{% url 'manage_users' %}">Users</a> |
+            <a href="{% url 'logout' %}">Logout</a>
         </nav>
     </header>
+
     <main>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p class="message {{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
         {% block content %}{% endblock %}
     </main>
 </body>

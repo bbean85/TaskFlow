@@ -1,0 +1,233 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Header Styles */
+h1 {
+    font-size: 1.8rem;
+    color: #0044cc;
+    margin-bottom: 20px;
+}
+
+/* Form Styles (for Login and Registration Forms) */
+form {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #002a80;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    color: #0044cc;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Register Section */
+.register-container {
+    margin-top: 20px;
+}
+
+.register-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.register-container p {
+    margin: 0 0 15px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Task List Styles */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.task-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.task-item h3 {
+    font-size: 1.5rem;
+    color: #0044cc;
+    margin-bottom: 10px;
+}
+
+.task-item p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+/* Task Actions */
+.task-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.task-actions .btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.task-actions .btn:hover {
+    opacity: 0.9;
+}
+
+.task-actions .btn-edit {
+    background-color: #007bff;
+}
+
+.task-actions .btn-delete {
+    background-color: #dc3545;
+}
+
+.task-actions .btn-complete {
+    background-color: #28a745;
+}
+
+/* Create Button */
+.btn-create {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Messages Styles */
+.messages {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.messages.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.messages.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.messages.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    .task-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

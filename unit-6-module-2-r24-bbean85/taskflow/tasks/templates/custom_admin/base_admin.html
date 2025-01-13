@@ -3,16 +3,24 @@
 <head>
     <title>{% block title %}Admin Panel{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/admin_styles.css' %}">
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
     <header>
         <h1>Admin Panel</h1>
-        <nav>
-            <a href="/custom-admin/">Dashboard</a> |
-            <a href="/logout/">Logout</a>
+        <nav class="admin-nav">
+            <a href="{% url 'custom_admin' %}" class="nav-link">Dashboard</a>
+            <a href="{% url 'logout' %}" class="nav-link">Logout</a>
         </nav>
     </header>
     <main>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p class="message {{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
         {% block content %}
         
         {% endblock %}

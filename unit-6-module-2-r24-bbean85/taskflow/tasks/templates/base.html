@@ -3,19 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My App{% endblock %}</title>
+    <title>{% block title %}TaskFlow{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header>
-        <h1>Welcome to TaskFlow</h1>
-        <nav>
-            <a href="/">Home</a> |
-            <a href="/tasks/">Tasks</a> |
-            <a href="/logout/">Logout</a>
-        </nav>
-    </header>
-    
+    <div class="container">
+        <header>
+            <h1>TaskFlow</h1>
+            <div class="user-info">
+                {% if user.is_authenticated %}
+                    <span>Welcome, {{ user.username }}!</span>
+                    <a href="{% url 'logout' %}" class="btn btn-logout">Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-login">Login</a>
+                {% endif %}
+            </div>
+        </header>
+
+        <main>
+            {% block content %}
+            <!-- Page-specific content goes here -->
+            {% endblock %}
+        </main>
+
+       
+    </div>
 </body>
 </html>
