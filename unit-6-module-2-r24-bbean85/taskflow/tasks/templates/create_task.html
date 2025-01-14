@@ -1,24 +1,26 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block title %}Create Task{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h2>Create a New Task</h2>
+<div class="container" style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h2 class="text-center" style="color: #333; font-family: 'Arial', sans-serif; margin-bottom: 20px;">Create a New Task</h2>
 
     {% if messages %}
-        <div class="messages">
+        <div class="messages" style="margin-bottom: 15px;">
             {% for message in messages %}
-                <p class="{{ message.tags }}">{{ message }}</p>
+                <p class="{{ message.tags }}" style="color: {% if message.tags == 'success' %}green{% elif message.tags == 'error' %}red{% else %}#333{% endif %}; font-size: 14px;">
+                    {{ message }}
+                </p>
             {% endfor %}
         </div>
     {% endif %}
 
     <!-- Task Creation Form -->
-    <form method="post" action="{% url 'tasks:create_task' %}" class="task-form">
+    <form method="post" action="{% url 'tasks:create_task' %}" class="task-form" style="font-family: 'Arial', sans-serif;">
         {% csrf_token %}
         {% if form.errors %}
-            <ul class="form-errors">
+            <ul class="form-errors" style="color: red; font-size: 14px; margin-bottom: 15px;">
                 {% for field in form %}
                     {% for error in field.errors %}
                         <li>{{ error }}</li>
@@ -26,8 +28,12 @@
                 {% endfor %}
             </ul>
         {% endif %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Create Task</button>
+        <div style="margin-bottom: 15px;">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary" style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">
+            Create Task
+        </button>
     </form>
 </div>
 {% endblock %}
