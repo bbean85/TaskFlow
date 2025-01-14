@@ -1,7 +1,7 @@
 /* General Body Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
+    background: linear-gradient(135deg, #0044cc, #6c757d); /* Gradient */
     color: #333;
     margin: 0;
     padding: 0;
@@ -13,13 +13,13 @@ body {
 
 /* Container Styles */
 .container {
-    max-width: 500px;
-    background: white;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Header Styles */
 h1 {
@@ -51,7 +51,7 @@ form input {
 
 .btn-submit {
     background-color: #0044cc;
-    color: white;
+    color: rgb(238, 240, 250);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -230,4 +230,86 @@ form input {
     .btn {
         width: 100%;
     }
+}
+/* Global Styles */
+:root {
+    --primary-color: #0044cc; /* Main theme color */
+    --secondary-color: #6c757d; /* Secondary color */
+    --text-color: #333; /* Text color */
+    --background-color: #f0f4f8; /* Background color */
+    --card-bg-color: white; /* Card background */
+    --btn-hover-color: #002a80; /* Button hover color */
+    --btn-secondary-hover-color: #5a6268;
+}
+
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styles */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-hover-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover-color);
+}
+
+/* Card Style */
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
 }

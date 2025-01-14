@@ -1,41 +1,27 @@
+{% extends 'base.html' %}
 
+{% block title %}Login - TaskFlow{% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to TaskFlow</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <div class="container">
-        <h1 class="page-title">Welcome to TaskFlow</h1>
+{% block content %}
+    <div class="login-container card">
+        <h2 class="section-title">Login</h2>
+        <form method="POST" action="{% url 'login' %}" class="login-form">
+            {% csrf_token %}
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" id="username" name="username" class="form-input" placeholder="Enter your username" required>
 
-        <!-- Login Section -->
-        <div class="login-container card">
-            <h2 class="section-title">Login</h2>
-            <form method="POST" action="{% url 'login' %}" class="login-form">
-                {% csrf_token %}
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" id="username" name="username" class="form-input" placeholder="Enter your username" required>
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
 
-                <label for="password" class="form-label">Password:</label>
-                <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
+            <button type="submit" class="btn btn-submit">Login</button>
+        </form>
 
-                <button type="submit" class="btn btn-submit">Login</button>
-            </form>
-
-            <a href="{% url 'password_reset' %}" class="forgot-password">Forgot your password?</a>
-        </div>
-
-        <!-- Register Section -->
-        <div class="register-container card">
-            <h2 class="section-title">Don't have an account?</h2>
-            <p>You can view tasks but cannot modify them unless you register. Register to manage tasks.</p>
-            <a href="{% url 'register' %}" class="btn btn-secondary">Register</a>
-        </div>
+        <a href="{% url 'password_reset' %}" class="forgot-password">Forgot your password?</a>
     </div>
-</body>
-</html>
+
+    <div class="register-container card">
+        <h2 class="section-title">Don't have an account?</h2>
+        <p>You can view tasks but cannot modify them unless you register. Register to manage tasks.</p>
+        <a href="{% url 'register' %}" class="btn btn-secondary">Register</a>
+    </div>
+{% endblock %}
